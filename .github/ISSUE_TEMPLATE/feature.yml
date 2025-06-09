@@ -31,7 +31,7 @@ body:
   - type: dropdown
     id: storypoints
     attributes:
-      label: **Story Points**
+      label: "Story Points"
       description: Effort estimate
       options:
         - "3 (S)"
