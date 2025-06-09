@@ -1,0 +1,25 @@
+name: Commit Lint
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          cache: "npm"
+
+      - name: Install commitlint
+        run: |
+          npm ci --ignore-scripts
+      - name: Lint commits
+        run: |
+          npx commitlint --from=${{ github.event.before }} --to=${{ github.sha }}

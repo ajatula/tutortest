@@ -1,0 +1,42 @@
+name: "✨ Feature"
+description: "Request or specify a new feature"
+title: "[Feat] <concise title>"
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill in *all* sections—blank sections slow things down.
+  - type: input
+    id: summary
+    attributes:
+      label: **Summary**
+      description: One-sentence description of the feature.
+      placeholder: "As a tutor, I can …"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: **Acceptance Criteria**
+      description: Bullet-point list of DONE conditions.
+      placeholder: |
+        - Given I am logged in …
+        - When I click …
+        - Then I see …
+    validations:
+      required: true
+
+  - type: dropdown
+    id: storypoints
+    attributes:
+      label: **Story Points**
+      description: Effort estimate
+      options:
+        - "3 (S)"
+        - "8 (M)"
+        - "13 (L)"
+        - "21 (XL)"
+    validations:
+      required: true
